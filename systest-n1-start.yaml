@@ -6,7 +6,7 @@
   hosts: tldboran1
   tasks:
     - name: Starting DB
-      shell: /home/oracle/scripts/dbs_shutdown.ksh              
+      shell: /home/oracle/scripts/dbs_startup.ksh              
       register: dbstatus
     - debug:
        var: dbstatus.stdout_lines 
