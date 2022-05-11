@@ -1,1 +1,12 @@
-
+---
+- name: Stop Oracle DB
+  gather_facts: false
+  become: true
+  become_user: oracle
+  hosts: qldboran1
+  tasks:
+    - name: Stopping DB
+      shell: /home/oracle/scripts/dbs_shutdown.ksh              
+      register: dbstatus
+    - debug:
+       var: dbstatus.stdout_lines 
