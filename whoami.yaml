@@ -7,8 +7,8 @@
     - name: whoami
       command: whoami                             
       register: dbstatus
-      become: true
-      become_user: oracle
+      #become: true
+      #become_user: oracle
 
     - debug:
        var: dbstatus.stdout_lines
