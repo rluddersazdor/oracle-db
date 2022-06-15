@@ -1,10 +1,10 @@
 ---
 # Whoami       
-- name: Stop Secondary Oracle DB
+- name: Who Am I
   gather_facts: false
-  hosts: dldboran1
+  hosts: qlaptascob1
   tasks:
-    - name: WhoAmI
+    - name: whoami
       command: whoami                             
       register: dbstatus
       become: true
