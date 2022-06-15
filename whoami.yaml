@@ -1,0 +1,14 @@
+---
+# Whoami       
+- name: Stop Secondary Oracle DB
+  gather_facts: false
+  hosts: dldboran1
+  tasks:
+    - name: WhoAmI
+      command: whoami                             
+      register: dbstatus
+      become: true
+      become_user: oracle
+
+    - debug:
+       var: dbstatus.stdout_lines
